@@ -1,0 +1,25 @@
+@import "animate.css";
+@tailwind base;
+@tailwind components;
+
+@tailwind utilities;
+
+@font-face {
+  font-family: "helvetica-neue";
+  src: url("./assets/fonts/helvetica-neu.ttf") format("ttf");
+}
+
+@font-face {
+  font-family: "La Belle Aurore";
+  src: url("./assets/fonts/LaBelleAurore.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Coolvetica";
+  src: url("./assets/fonts/CoolveticaRg-Regular.woff2") format("woff2");
+}
+
+body {
+  height: 100vh;
+  overflow: hidden;
+}
