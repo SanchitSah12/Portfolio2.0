@@ -1,7 +1,6 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import PageWrapper from '../Layout'
 import data from './data'
-import Wrapper from './Wrapper'
 import AnimatedLetters from '../AnimatedLetters'
 import { Link } from 'react-router-dom'
 const Projects = () => {

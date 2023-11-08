@@ -1,5 +1,5 @@
 
-import { MapContainer, Marker, Popup, TileLayer, useMapEvents } from 'react-leaflet'
+import { MapContainer, Marker, Popup, TileLayer } from 'react-leaflet'
 const Map = () => {
     const position = [29.379206, 79.463019]
     return (

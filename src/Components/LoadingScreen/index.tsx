@@ -15,7 +15,7 @@ const LoadingScreen = () => {
 
       
 
-        <div className={'flex justify-center items-center h-screen' + location.pathname !== '/contact' && 'hidden '}>
+        <div className={`flex justify-center items-center h-screen ${location.pathname == '/contact' && "hidden"}`}>
           <div className='w-56'>
             {View}
 

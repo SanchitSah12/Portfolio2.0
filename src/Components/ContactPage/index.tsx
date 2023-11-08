@@ -1,6 +1,6 @@
 
 import Swal from 'sweetalert2';
-import React, { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import emailjs from '@emailjs/browser';
 import Map from './Map';
 import PageWrapper from '../Layout';
