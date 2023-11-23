@@ -14,8 +14,12 @@ const HomePage = () => {
   useEffect(() => {
     setTimeout(() => {
       setLetterClass('text-animate-hover');
-      setLoading(true);
     }, 4000)
+  }, [])
+  useEffect(() => {
+    setTimeout(() => {
+      setLoading(true);
+    }, 1000)
   }, [])
   const options = {
     animationData: animation,
@@ -43,7 +47,7 @@ const HomePage = () => {
         </div>
       </div>
 
-      <div className={`hidden lg:block image absolute w-96 bottom-[35%] left-[60%] transition ease-in`}>
+      <div className={`lg:block image absolute w-96 bottom-[35%] left-[60%]  ${loading ? 'opacity-100  transition-opacity duration-500 ease-in-out' : 'opacity-0'}`}>
         {View}
       </div>
     </>
