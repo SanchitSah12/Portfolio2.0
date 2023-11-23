@@ -11,9 +11,15 @@ import Footer from './Components/FooterButton'
 import Contact from './Components/ContactPage'
 import Projects from './Components/Projects'
 import { useSwipeable } from 'react-swipeable'
-
+import { useLottie } from 'lottie-react'
+import animation from '../src/assets/Right.json'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faArrowRight } from '@fortawesome/free-solid-svg-icons'
 function App() {
   const [isLoading, setIsLoading] = useState(true)
+  const [showLeft,setShowLeft] = useState(false);
+  const [showRight,setShowRight] = useState(false);
+
 
   useEffect(() => {
     const timeoutId = setTimeout(() => {
@@ -26,6 +32,20 @@ function App() {
 
   //For swipable navigation in phones
   const handlers = useSwipeable({
+    onSwiping:(options)=>{
+      if(options.dir === 'Left'){
+        setShowLeft(true);
+        setShowRight(false);
+      }
+      else{
+        setShowLeft(false);
+        setShowRight(true);
+      }
+    },
+    onSwiped: () => {
+      setShowLeft(false);
+      setShowRight(false);
+    },
     onSwipedLeft: () => {
       if (location.pathname === '/') {
         navigate('/about');
@@ -36,6 +56,7 @@ function App() {
       } else if (location.pathname === '/skills') {
         navigate('/contact');
       }
+      setShowLeft(false);
     },
     onSwipedRight: () => {
       if (location.pathname === '/contact') {
@@ -46,17 +67,29 @@ function App() {
         navigate('/about');
       } else if (location.pathname === '/about') {
         navigate('/');
+
       }
+      setShowRight(false);
     },
+    swipeDuration:250,
+    
     trackMouse: false
   });
+
   return (
     <>
       {isLoading ? (
         <LoadingScreen/>
         ) : (
-          <body className='sm:overflow-x-hidden lg:overflow-hidden' {...handlers}>
+          <div className='overflow-hidden' {...handlers}>
           <Navbar />
+          <div className=''>
+            {showLeft && <div className='absolute  top-[300px] left-32'>
+            <FontAwesomeIcon size='3x' className='animate-ping text-[#ffd700] w-96' icon={faArrowRight} /></div>}
+            {showRight && <div className='absolute top-[300px] left-[5%] rotate-180'>
+            <FontAwesomeIcon size='3x' className=' animate-ping text-[#ffd700]' icon={faArrowRight} /></div>}
+            {/* {View} */}
+          </div>
           <Routes>
             <Route path="/" element={<HomePage/>} />
             <Route path="/about" element={<About/>} />
@@ -66,7 +99,7 @@ function App() {
 
           </Routes>
           <Footer/>
-        </body>
+        </div>
       )}
     </>
   )

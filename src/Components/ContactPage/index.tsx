@@ -1,5 +1,5 @@
-
-import Swal from 'sweetalert2';
+import './index.scss'
+import Swal from 'sweetalert2/dist/sweetalert2.js';
 
 import { useEffect, useRef, useState } from 'react';
 import emailjs from '@emailjs/browser';
@@ -40,7 +40,7 @@ const Contact = () => {
     }, [])
     return (
         <PageWrapper>
-            <section className="reveal mt-5 " id="contact">
+            <section className="reveal mt-5 lg:mx-0  mx-5" id="contact">
                 <h1 className='font-display text-4xl text-center font-bold mb-4'>
                     <AnimatedLetters letterClass={letterClass}
                         strArray={"The Contact Page".split("")}
