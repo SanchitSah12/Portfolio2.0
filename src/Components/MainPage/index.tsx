@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom'
 import './index.scss'
 import AnimatedLetters from '../AnimatedLetters'
 import Transition from '../AnimatedLetters/Transition'
+import { useLottie } from 'lottie-react'
+import animation from '../../assets/Guy.json'
 
 const HomePage = () => {
   const [letterClass, setLetterClass] = useState('text-animate');
@@ -14,6 +16,11 @@ const HomePage = () => {
       setLetterClass('text-animate-hover')
     }, 4000)
   }, [])
+  const options = {
+    animationData: animation,
+    loop: true,
+  }
+  const { View } = useLottie(options);
   return (
     <>
       <div className='container home-page'>
@@ -33,6 +40,10 @@ const HomePage = () => {
           </h1>
           <Link className='flat-button' to="/contact">Contact</Link>
         </div>
+      </div>
+
+      <div className='hidden lg:block image absolute w-96 bottom-[35%] left-[60%]  ease-in-out'>
+        {View}
       </div>
     </>
   )

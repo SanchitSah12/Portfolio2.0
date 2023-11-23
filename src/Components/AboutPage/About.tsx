@@ -2,20 +2,31 @@ import { useEffect, useState } from "react";
 import AnimatedLetters from "../AnimatedLetters";
 import { Link } from "react-router-dom";
 import PageWrapper from "../Layout";
+import LoadingScreen from "../LoadingScreen";
 
 function About() {
     const [letterClass, setLetterClass] = useState('text-animate');
+    const [isLoading, setIsLoading] = useState(true)
+
+    useEffect(() => {
+        const timeoutId = setTimeout(() => {
+            setIsLoading(false)
+        }, 1000)
+        return () => clearTimeout(timeoutId)
+    }, [])
+
     useEffect(() => {
         setTimeout(() => {
             setLetterClass('text-animate-hover')
-        }, 3000)
+        }, 5000)
     }, [])
     return (
+        isLoading ? (<div className="bottom-[6%] left-[42%] absolute"><LoadingScreen/></div>):(
         <PageWrapper>
             <section className="text-white p-4 lg:flex m-[5%] reveal lg:mx-60 lg:mb-32" id="about">
 
                 <div className="lg:m-4 lg:ml-10 ">
-                    <img className="w-52 h-52 block ml-auto mr-auto rounded-full lg:h-72 lg:w-72 lg:absolute lg:translate-y-[2rem]" src="https://i.postimg.cc/nz0XBfXx/1641449042082.jpg" alt="" />
+                    <img className="w-52 h-52 block ml-auto mr-auto rounded-full lg:h-72 lg:w-72 lg:absolute lg:translate-y-[2rem]" src="/Sanchit.jpg" alt="" />
                 </div>
 
                 <div className=" mt-10 lg:ml-96">
@@ -37,7 +48,7 @@ function About() {
 
                 </div>
             </section>
-        </PageWrapper>
+        </PageWrapper>)
     )
 
 }
