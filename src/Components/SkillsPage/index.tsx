@@ -24,7 +24,7 @@ export default function Skills() {
 
     return (
         <PageWrapper>
-            <div className='lg:mx-96 lg:mt-10 '>
+            <div className='ml-6 mt-10 lg:mx-96 lg:mt-10 '>
                 <div className='lg:mb-5'>
                     <h1 className='font-display text-4xl font-bold mb-4 '>
                         <AnimatedLetters letterClass={letterClass}

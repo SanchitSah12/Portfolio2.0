@@ -14,8 +14,11 @@ const Projects = () => {
 
     return (
 
-            <PageWrapper>
-                <div className='mx-32 mt-10 mb-10'>
+        <PageWrapper>
+            <div className=''>
+
+
+                <div className='lg:mx-32 mt-10 mb-10'>
                     <h1 className='font-display text-4xl font-bold mb-4 flex'>
                         <AnimatedLetters letterClass={letterClass}
                             strArray={"The Project Section".split("")}
@@ -24,7 +27,7 @@ const Projects = () => {
                     <p className='text-[#ffd700]'>Some of my highlighted projects are:</p>
                 </div>
 
-                <div className='flex mx-32 space-x-9'>
+                <div className=' lg:flex lg:mx-32 overflow-visible lg:space-x-9 space-y-3'>
                     {
                         data.map(project => {
                             return (
@@ -51,9 +54,10 @@ const Projects = () => {
                         })
                     }
                 </div>
+            </div>
 
-            </PageWrapper>
-        )
+        </PageWrapper>
+    )
 }
 
 export default Projects

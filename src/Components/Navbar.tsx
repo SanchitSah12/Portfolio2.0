@@ -7,6 +7,7 @@ const Navbar = () => {
     { name: 'Projects', href: '/projects' },
     { name: 'Skills', href: '/skills' },
   ]
+  
   return (
 
     <nav>

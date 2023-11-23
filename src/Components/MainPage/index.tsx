@@ -28,7 +28,7 @@ const HomePage = () => {
   const { View } = useLottie(options);
   return (
     <>
-      <div className='container home-page'>
+      <div className='container home-page overflow-hidden'>
         <div className="text-zone">
           <h1>
             <span className={letterClass}>H</span>
@@ -47,7 +47,7 @@ const HomePage = () => {
         </div>
       </div>
 
-      <div className={`lg:block image absolute w-96 bottom-[35%] left-[60%]  ${loading ? 'opacity-100  transition-opacity duration-500 ease-in-out' : 'opacity-0'}`}>
+      <div className={`hidden lg:block image absolute w-96 bottom-[35%] left-[60%]  ${loading ? 'opacity-100  transition-opacity duration-500 ease-in-out' : 'opacity-0'}`}>
         {View}
       </div>
     </>

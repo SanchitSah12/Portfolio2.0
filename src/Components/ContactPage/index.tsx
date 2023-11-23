@@ -1,5 +1,6 @@
 
 import Swal from 'sweetalert2';
+
 import { useEffect, useRef, useState } from 'react';
 import emailjs from '@emailjs/browser';
 import Map from './Map';
@@ -39,16 +40,16 @@ const Contact = () => {
     }, [])
     return (
         <PageWrapper>
-            <section className="reveal mt-5  " id="contact">
-            <h1 className='font-display text-4xl text-center font-bold mb-4'>
+            <section className="reveal mt-5 " id="contact">
+                <h1 className='font-display text-4xl text-center font-bold mb-4'>
                     <AnimatedLetters letterClass={letterClass}
                         strArray={"The Contact Page".split("")}
                         idx={8} />
                 </h1>
-                <p className="text-center mb-5 text-[#ffd700]">Connect with me, send an email.</p>
+                <p className="text-center lg:mb-5 text-[#ffd700]">Connect with me, send an email.</p>
                 <div className='flex'>
                     <form ref={form} onSubmit={sendEmail}>
-                        <div className="flex flex-col ml-32 w-96" >
+                        <div className="flex flex-col lg:ml-32 w-96" >
                             <div className="flex flex-col">
                                 <label className="label">
                                     <span className="label-text">Name</span>
@@ -79,7 +80,7 @@ const Contact = () => {
                         </div>
 
                     </form>
-                    <div className="s h-[80%] w-[50%] absolute lg:left-[40%] -z-10">
+                    <div className="hidden lg:block h-[80%] w-[50%] absolute lg:left-[40%] -z-10">
                         <Map />
                     </div>
                 </div>
