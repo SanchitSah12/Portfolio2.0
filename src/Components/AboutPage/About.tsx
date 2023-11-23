@@ -11,7 +11,7 @@ function About() {
     useEffect(() => {
         const timeoutId = setTimeout(() => {
             setIsLoading(false)
-        }, 1000)
+        }, 200)
         return () => clearTimeout(timeoutId)
     }, [])
 
@@ -29,7 +29,7 @@ function About() {
                     <img className="w-52 h-52 block ml-auto mr-auto rounded-full lg:h-72 lg:w-72 lg:absolute lg:translate-y-[2rem]" src="/Sanchit.jpg" alt="" />
                 </div>
 
-                <div className=" mt-10 lg:ml-96">
+                <div className=" mt-10 lg:ml-80">
                     <h1 className="text-2xl lg:text-4xl font-display font-bold">
                         <AnimatedLetters letterClass={letterClass}
                             strArray={"About Me".split("")}

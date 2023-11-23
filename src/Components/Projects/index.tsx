@@ -3,7 +3,6 @@ import PageWrapper from '../Layout'
 import data from './data'
 import AnimatedLetters from '../AnimatedLetters'
 import { Link } from 'react-router-dom'
-import LoadingScreen from '../LoadingScreen'
 const Projects = () => {
     const [letterClass, setLetterClass] = useState('text-animate');
     useEffect(() => {

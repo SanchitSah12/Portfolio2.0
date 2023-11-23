@@ -10,10 +10,11 @@ import animation from '../../assets/Guy.json'
 const HomePage = () => {
   const [letterClass, setLetterClass] = useState('text-animate');
   const nameArray = " Sanchit".split('');
-
+  const [loading,setLoading] = useState(false);
   useEffect(() => {
     setTimeout(() => {
-      setLetterClass('text-animate-hover')
+      setLetterClass('text-animate-hover');
+      setLoading(true);
     }, 4000)
   }, [])
   const options = {
@@ -42,7 +43,7 @@ const HomePage = () => {
         </div>
       </div>
 
-      <div className='hidden lg:block image absolute w-96 bottom-[35%] left-[60%]  ease-in-out'>
+      <div className={`hidden lg:block image absolute w-96 bottom-[35%] left-[60%] transition ease-in`}>
         {View}
       </div>
     </>
