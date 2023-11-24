@@ -11,8 +11,6 @@ import Footer from './Components/FooterButton'
 import Contact from './Components/ContactPage'
 import Projects from './Components/Projects'
 import { useSwipeable } from 'react-swipeable'
-import { useLottie } from 'lottie-react'
-import animation from '../src/assets/Right.json'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons'
 function App() {
@@ -83,7 +81,7 @@ function App() {
         ) : (
           <div className='overflow-hidden' {...handlers}>
           <Navbar />
-          <div className=''>
+          <div className='fixed z-10'>
             {showLeft && <div className='absolute  top-[300px] left-32'>
             <FontAwesomeIcon size='3x' className='animate-ping text-[#ffd700] w-96' icon={faArrowRight} /></div>}
             {showRight && <div className='absolute top-[300px] left-[5%] rotate-180'>
