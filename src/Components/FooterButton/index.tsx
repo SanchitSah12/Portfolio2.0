@@ -29,6 +29,8 @@ const Footer = () => {
             navigate('/skills');
         } else if (location.pathname === '/skills') {
             navigate('/contact');
+        }else if (location.pathname === '/contact') {
+            navigate('/');
         }
     };
     return (

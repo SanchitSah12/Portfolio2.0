@@ -28,12 +28,13 @@ const Projects = () => {
                 </div>
 
                 <div className=' lg:flex lg:mx-32 overflow-visible lg:space-x-9 space-y-3'>
+                    <div/>
                     {
                         data.map(project => {
                             return (
                                 <Link to={project.link}>
                                     <div className='='><div className="card w-96 h-96 bg-base-100 shadow-xl">
-                                        <figure><img className='object-fill' src={project.img} alt="Shoes" /></figure>
+                                        <figure><img className='object-fill' src={project.img} alt="" /></figure>
                                         <div className="card-body">
                                             <h2 className="card-title text-[#ffd700]">{project.name}</h2>
                                             <p>{project.description}</p>
@@ -43,7 +44,7 @@ const Projects = () => {
                                                 </p>
                                                 <div className="flex space-x-5">
                                                     {project.frameworks.map((framework: string) => {
-                                                        return <span className="w-10 "><img src={framework} alt="" /></span>;
+                                                        return <span className="w-5 lg:w-10 "><img src={framework} alt="" /></span>;
                                                     })}
                                                 </div>
                                             </div>

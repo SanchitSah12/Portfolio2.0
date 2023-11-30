@@ -14,7 +14,7 @@ const USER_ID = "user_mYSixpJjWbz9jyZ9iqwYr";
 const Contact = () => {
     const form = useRef();
 
-    const sendEmail = (e) => {
+    const sendEmail = (e: { preventDefault: () => void; }) => {
         e.preventDefault();
 
         emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, form.current!, USER_ID)
@@ -55,7 +55,7 @@ const Contact = () => {
                     </div>
                     <div className='flex'>
                         <form ref={form} onSubmit={sendEmail}>
-                            <div className="flex flex-col lg:ml-5 w-96" >
+                            <div className="flex flex-col lg:ml-5 w-64 lg:w-96" >
                                 <div className="flex flex-col">
                                     <label className="label">
                                         <span className="label-text">Name</span>
