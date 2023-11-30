@@ -13,10 +13,29 @@ const TEMPLATE_ID = "template_yhzl5a9";
 const USER_ID = "user_mYSixpJjWbz9jyZ9iqwYr";
 const Contact = () => {
     const form = useRef();
+    const [email, setEmail] = useState('');
+    const [message, setMessage] = useState('');
 
     const sendEmail = (e: { preventDefault: () => void; }) => {
         e.preventDefault();
+        if (!email || !email.includes('@')) {
+            Swal.fire({
+                icon:'warning',
+                title:'Enter a valid Email'
+            })
+            return;
+          }
+      
+          // Validate message
+          if (!message) {
+            Swal.fire({
+                icon:'warning',
+                title:'Enter a valid Message'
+            })
+            return;
+        }
 
+        
         emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, form.current!, USER_ID)
             .then((result: { text: string; }) => {
                 console.log(result.text);
@@ -60,18 +79,18 @@ const Contact = () => {
                                     <label className="label">
                                         <span className="label-text">Name</span>
                                     </label>
-                                    <input className="input input-bordered input-warning w-full max-w-lg" type="text" name="from_name" />
+                                    <input className="input input-bordered input-warning w-full max-w-lg" type="text"  name="from_name" />
                                     <label className="label">
                                         <span className="label-text">Email</span>
                                     </label>
-                                    <input className="input input-bordered input-warning w-full max-w-lg" type="email" name="user_email" />
+                                    <input className="input input-bordered input-warning w-full max-w-lg" type="email" value={email} onChange={e => setEmail(e.target.value)} name="user_email" required/>
                                 </div>
 
                                 <div className="flex flex-col">
                                     <label className="label">
                                         <span className="label-text">Message</span>
                                     </label>
-                                    <textarea className="textarea textarea-warning" name="message" />
+                                    <textarea className="textarea textarea-warning" value={message} onChange={e => setMessage(e.target.value)} name="message" required/>
                                 </div>
                                 <div className="flex flex-col">
                                     <label className="label">
