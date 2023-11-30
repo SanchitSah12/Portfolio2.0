@@ -41,7 +41,7 @@ const Contact = () => {
     }, [])
     return (
         <PageWrapper>
-            <section className="reveal mt-5 flex flex-row space-x-40 mx-[20%]" id="contact">
+            <section className="reveal mt-5 flex flex-row space-x-40 justify-center" id="contact">
                 <div className=''>
                     <h1 className='font-display text-4xl text-center font-bold mb-4'>
                         <AnimatedLetters letterClass={letterClass}
@@ -49,18 +49,22 @@ const Contact = () => {
                             idx={8} />
                     </h1>
                     <p className="text-center lg:mb-5 text-[#ffd700]">Connect with me, send an email.</p>
+
+                    <div className='lg:hidden'>
+                        <Icons />
+                    </div>
                     <div className='flex'>
                         <form ref={form} onSubmit={sendEmail}>
-                            <div className="flex flex-col lg:ml-32 w-96" >
+                            <div className="flex flex-col lg:ml-5 w-96" >
                                 <div className="flex flex-col">
                                     <label className="label">
                                         <span className="label-text">Name</span>
                                     </label>
-                                    <input className="input input-bordered input-warning w-full max-w-xs" type="text" name="from_name" />
+                                    <input className="input input-bordered input-warning w-full max-w-lg" type="text" name="from_name" />
                                     <label className="label">
                                         <span className="label-text">Email</span>
                                     </label>
-                                    <input className="input input-bordered input-warning w-full max-w-xs" type="email" name="user_email" />
+                                    <input className="input input-bordered input-warning w-full max-w-lg" type="email" name="user_email" />
                                 </div>
 
                                 <div className="flex flex-col">
@@ -84,7 +88,7 @@ const Contact = () => {
                         </form>
                     </div>
                 </div>
-                <div className="mt-24">
+                <div className="hidden lg:block mt-24">
                     {/* <Map /> */}
                     <Icons></Icons>
                 </div>
