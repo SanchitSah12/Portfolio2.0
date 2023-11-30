@@ -13,6 +13,7 @@ import Projects from './Components/Projects'
 import { useSwipeable } from 'react-swipeable'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons'
+import Timeline from './Components/Timeline'
 function App() {
   const [isLoading, setIsLoading] = useState(true)
   const [showLeft,setShowLeft] = useState(false);
@@ -65,7 +66,6 @@ function App() {
         navigate('/about');
       } else if (location.pathname === '/about') {
         navigate('/');
-
       }
       setShowRight(false);
     },
@@ -93,6 +93,8 @@ function App() {
             <Route path="/about" element={<About/>} />
             <Route path="/skills" element={<Skills/>} />
             <Route path="/contact" element={<Contact/>} />
+            <Route path="/timeline" element={<Timeline/>} />
+
             <Route path="/projects" element={<Projects/>} />
 
           </Routes>

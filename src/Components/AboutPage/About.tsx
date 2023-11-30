@@ -23,7 +23,7 @@ function About() {
     return (
         isLoading ? (<div className="bottom-[6%] left-[42%] absolute"><LoadingScreen/></div>):(
         <PageWrapper>
-            <section className="mx-5 text-white p-4 lg:flex m-[5%] reveal lg:mx-60 lg:mb-32" id="about">
+            <section className="mx-5 text-white p-4 lg:flex m-[5%] reveal lg:mx-72 lg:mb-32" id="about">
 
                 <div className="lg:m-4 lg:ml-10 ">
                     <img className="w-52 h-52 block ml-auto mr-auto rounded-full lg:h-72 lg:w-72 lg:absolute lg:translate-y-[2rem]" src="/Sanchit.jpg" alt="" />

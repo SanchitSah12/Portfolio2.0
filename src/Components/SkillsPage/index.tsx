@@ -3,6 +3,7 @@ import SingleSkill from './SingleSkill'
 import data from './data'
 import AnimatedLetters from '../AnimatedLetters';
 import PageWrapper from '../Layout';
+import Spinner from './Spinner';
 
 export default function Skills() {
     const [letterClass, setLetterClass] = useState('text-animate');
@@ -24,18 +25,15 @@ export default function Skills() {
 
     return (
         <PageWrapper>
-            <div className='ml-6 mt-10 lg:mx-96 lg:mt-10 '>
-                <div className='lg:mb-5'>
-                    <h1 className='font-display text-4xl font-bold mb-4 '>
+            <div className='ml-6 mt-10  lg:mt-20 lg:ml-48 lg:mr-[40%]'>
+                <div className='lg:mb-5 lg:ml-5'>
+                    <h1 className='font-display text-4xl font-bold justify-center '>
                         <AnimatedLetters letterClass={letterClass}
                             strArray={"The Skill Section".split("")}
                             idx={8} />
                     </h1>
                     <p className='text-[#ffd700]'>My arsenal of tools and languages consists of</p>
                 </div>
-
-
-
 
                 <div className=' flex flex-wrap space-x-5 space-y-4'>
                     <button />
@@ -57,6 +55,10 @@ export default function Skills() {
                         <option value="Operating System">Operating System</option>
                         <option value="Database">Database</option>
                     </select>
+                </div>
+                <div className=' hidden lg:block'>
+
+                    <Spinner/>
                 </div>
             </div>
         </PageWrapper>
